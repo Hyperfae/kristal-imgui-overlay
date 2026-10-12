@@ -6,6 +6,8 @@ _G.Imgui = Imgui
 
 Imgui.first_update = false
 
+lib.logger = Logger("krimgui", ConsoleFormats.BLUE)
+
 function lib:preInit()
     Imgui.init()
 end
@@ -65,7 +67,7 @@ function Imgui.firstInit()
         lib.info = info
         _G.Imgui = nil
         Imgui.initialized = true
-        Kristal.Console:error(imlib)
+        lib.logger:error(imlib)
         return
     end
     ---@type imgui
